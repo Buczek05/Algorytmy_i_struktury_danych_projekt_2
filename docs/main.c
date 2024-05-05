@@ -67,7 +67,7 @@ void run_all_test(int max_size) {
         FILE *file_test_1 = get_file(file_name_test_1, "w");
         FILE *file_test_2 = get_file(file_name_test_2, "w");
         FILE *file_test_3 = get_file(file_name_test_3, "w");
-        for (int j = 10; j < max_size; j += 100){
+        for (int j = 100; j < max_size; j += 100){
             printf("Sorting %d elements list\n", j);
             int *table = get_random_table(j);
             check_result(sort_funcs[i], file_test_1, table, j);
@@ -81,10 +81,12 @@ void run_all_test(int max_size) {
     }
 }
 
-int main() {
-    int max_size;
-    printf("Write max table size: ");
-    scanf("%d", &max_size);
+int main(int argc, char *argv[]) {
+    if (argc < 2) {
+        printf("Please supply the max size parameter.\n");
+        return 1;
+    }
+    int max_size = atoi(argv[1]);
     run_all_test(max_size);
-    return 1;
+    return 0;
 }

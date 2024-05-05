@@ -5,10 +5,11 @@ void shell_sort(int table[], int size) {
         for (i = interval; i < size; i += 1) {
             temp = table[i];
 
-            for (j = i; j >= interval && table[j - interval] > temp;  ) {
+            for (j = i; j >= interval && table[j - interval] > temp; j -= interval) {
                 table[j] = table[j - interval];
             }
 
+            table[j] = temp;
         }
     }
 }
