@@ -1,17 +1,17 @@
 void selection_sort(int table[], int size) {
-    int i, j, minIndex, temp;
+    int i, j, min_index, temp;
 
     for (i = 0; i < size - 1; i++) {
-        minIndex = i;
+        min_index = i;
 
         for (j = i + 1; j < size; j++) {
-            if (table[j] < table[minIndex]) {
-                minIndex = j;
+            if (table[j] < table[min_index]) {
+                min_index = j;
             }
         }
 
         temp = table[i];
-        table[i] = table[minIndex];
-        table[minIndex] = temp;
+        table[i] = table[min_index];
+        table[min_index] = temp;
     }
 }

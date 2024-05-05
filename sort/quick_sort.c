@@ -4,8 +4,8 @@ int partition(int table[], int low, int high)
 {
     int pivot = table[high];
 
-    int i = (low - 1);
-
+    int i = low - 1;
+th
     for (int j = low; j <= high; j++) {
         if (table[j] < pivot) {
             i++;
